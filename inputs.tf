@@ -3,12 +3,12 @@ provider "aws" {
 }
 
 ### Find an AMI to use for the deployment
-data "aws_ami" "ubuntu" {
+data "aws_ami" "amazonlinux" {
   most_recent = true
 
   filter {
     name   = "name"
-    values = ["ubuntu/images/hvm-ssd/ubuntu-trusty-14.04-amd64-server-*"]
+    values = ["amzn-ami-hvm-*"]
   }
 
   filter {
@@ -16,12 +16,18 @@ data "aws_ami" "ubuntu" {
     values = ["hvm"]
   }
 
-  owners = ["099720109477"] # Canonical
+  owners = ["137112412989"] # Amazon
 }
 
-### The Subnet to deploy within. 
+### The Subnet to deploy within.
 variable "SUBNET" {
   type        = "string"
   description = "(Mandatory) Subnet to deploy within."
-  default     = "subnet-e618ba8e"
+  default     = "subnet-026e8193a76e08618"
+}
+
+variable "SECURITYGROUP" {
+  type        = "string"
+  description = "Open ports on the instance."
+  default     = "sg-0fcb64bc759982301"
 }
