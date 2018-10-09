@@ -8,7 +8,7 @@ jobs:
           - image: alpine:3.8
         working_directory: ~/sampleform/
         steps:
-          - checkout
+          - checkout:
               path: ~/sampleform
           - run:
               name: Install Terraform
