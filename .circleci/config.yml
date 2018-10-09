@@ -5,7 +5,7 @@ jobs:
 
   infrastructure:
         docker:
-          - image: alpine:3.8
+          - image: circleci/node:8.10
         working_directory: ~/sampleform/
         steps:
           - checkout:
