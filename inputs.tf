@@ -23,11 +23,11 @@ data "aws_ami" "amazonlinux" {
 variable "SUBNET" {
   type        = "string"
   description = "(Mandatory) Subnet to deploy within."
-  default     = "subnet-026e8193a76e08618"
+  default     = "subnet-09ce86163b3ba3ada"
 }
 
 variable "SECURITYGROUP" {
   type        = "string"
   description = "Open ports on the instance."
-  default     = "sg-0fcb64bc759982301"
+  default     = "sg-05e10172cae1d79b3"
 }
