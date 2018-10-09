@@ -1,7 +1,6 @@
 provider "aws" {
   region = "eu-central-1"
 }
-
 ### Find an AMI to use for the deployment
 data "aws_ami" "amazonlinux" {
   most_recent = true
@@ -23,7 +22,7 @@ data "aws_ami" "amazonlinux" {
 variable "SUBNET" {
   type        = "string"
   description = "(Mandatory) Subnet to deploy within."
-  default     = "subnet-09ce86163b3ba3ada"
+  default     = "subnet-06e023141034f77de"
 }
 
 variable "SECURITYGROUP" {
