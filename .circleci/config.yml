@@ -13,8 +13,8 @@ jobs:
           - run:
               name: Install Terraform
               command: |
-                wget -O terraform.zip https://releases.hashicorp.com/terraform/0.11.8/terraform_0.11.8_linux_amd64.zip
-                unzip terraform.zip -d /usr/local/bin
+                sudo wget -O terraform.zip https://releases.hashicorp.com/terraform/0.11.8/terraform_0.11.8_linux_amd64.zip
+                sudo unzip terraform.zip -d /usr/local/bin
           - deploy:
               name: Terraform INIT, PLAN and APPLY (or DESTROY)
               working_directory: ~/sampleform
