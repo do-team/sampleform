@@ -1,2 +1,2 @@
 # sampleform
-Demonstration of Terraform template. TEST
+Demonstration of Terraform template.
