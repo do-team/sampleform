@@ -6,14 +6,15 @@ jobs:
   infrastructure:
         docker:
           - image: alpine:3.8
-        working_directory: ~/terraform/
+        working_directory: ~/sampleform/
         steps:
           - checkout
+              path: ~/sampleform
           - run:
               name: Install Terraform
               command: |
-                sudo wget -O terraform.zip https://releases.hashicorp.com/terraform/0.11.8/terraform_0.11.8_linux_amd64.zip
-                sudo unzip terraform.zip -d /usr/local/bin
+                wget -O terraform.zip https://releases.hashicorp.com/terraform/0.11.8/terraform_0.11.8_linux_amd64.zip
+                unzip terraform.zip -d /usr/local/bin
           - deploy:
               name: Terraform INIT, PLAN and APPLY (or DESTROY)
               working_directory: ~/bia/terraform
