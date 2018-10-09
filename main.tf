@@ -4,7 +4,7 @@
 resource "aws_instance" "web" {
 
   ami           = "${data.aws_ami.amazonlinux.id}"
-  instance_type = "t2.small"
+  instance_type = "t2.nano"
   subnet_id     = "${var.SUBNET}"
   key_name      = "zu697-fra"
   associate_public_ip_address = "true"
