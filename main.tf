@@ -14,7 +14,7 @@ resource "aws_instance" "web" {
   tags = "${merge(
     local.common_tags,
     map(
-      "Name", "Dave"
+      "Name", "Simon"
     )
   )}"
 
