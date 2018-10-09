@@ -17,7 +17,7 @@ jobs:
                 unzip terraform.zip -d /usr/local/bin
           - deploy:
               name: Terraform INIT, PLAN and APPLY (or DESTROY)
-              working_directory: ~/bia/terraform
+              working_directory: ~/sampleform
               command: |
                 terraform init -input=false
                 terraform plan -input=false
