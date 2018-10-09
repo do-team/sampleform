@@ -3,34 +3,26 @@
 
 resource "aws_instance" "web" {
 
-  ami           = "ami-0e82b8b6afa30f2cd"
+  ami           = "${data.aws_ami.amazonlinux.id}"
   instance_type = "t2.small"
-  subnet_id     = "subnet-06e023141034f77de"
+  subnet_id     = "${var.SUBNET}"
   key_name      = "zu697-fra"
   associate_public_ip_address = "true"
-  vpc_security_group_ids = ["sg-05e10172cae1d79b3"]
+  vpc_security_group_ids = ["${var.SECURITYGROUP}"]
 
-  #
-  # tags = "${merge(
-  #   local.common_tags,
-  #   map(
-  #     "Name", "Hello World"
-  #   )
-  # )}"
-
-  tags {
-    Name = "Hello World"
-    Product = "Ledger"
-    CostCenter = "6522"
-    Environment = "Development"
-    ApplicationId = "0"
-    Creator = "zu697"
-    Owner = "zu697"
-  }
   
-  # 
-  # lifecycle {
-  #   create_before_destroy = "true"
-  # }
+  tags = "${merge(
+    local.common_tags,
+    map(
+      "Name", "Dave"
+    )
+  )}"
+
+
+  
+  
+  lifecycle {
+    create_before_destroy = "true"
+  }
 
 }
